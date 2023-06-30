@@ -61,6 +61,7 @@ class Game {
         else if (usrInput.equals("5") || usrInput.equals("Quit") || usrInput.equals("quit")) {
           System.out.println("\033[H\033[2J");
           System.out.println("Goodbye!");
+          IOF.delay(2000);
           break;
         }
         else {
