@@ -38,7 +38,7 @@ On top of that, IOF contains some other utility methods to change font color and
 Some issues I've noticed are more inconviences than absolute flaws. A few of them include:
 
 * The executable must stay inside of the Console-Bingo folder
-* You cannot back out of a game once it has started, you must close out in order to exit.
+* You cannot back out of a game once it has started, you must close out in order to exit
 * Coordinates are a little vague in terms of how X and Y or situatied
 * Only the game screen is colored, all other menus are plain white
 
