@@ -30,7 +30,7 @@ class IOF {
   //Turns every line inside of stats.txt into a string on an arraylist
   private List<String> getLines() {
     try {
-      return Files.readAllLines(Paths.get("ConsoleBingo/data/stats.txt"));
+      return Files.readAllLines(Paths.get("data/stats.txt"));
     }catch (IOException ex) {
       System.out.println("ERROR!\n" + ex);
       return null;
@@ -40,7 +40,7 @@ class IOF {
   //Writes all strings in the arraylist into the stats.txt file
   private void writeLines() {
     try {
-     Files.write(Paths.get("ConsoleBingo/data/stats.txt"), lines);
+     Files.write(Paths.get("data/stats.txt"), lines);
     }catch(Exception ex) {
       System.out.println("ERROR!\n" + ex);
       return;
@@ -89,16 +89,44 @@ class IOF {
     }
     
   }
+  
+  //Sets text color
+  static String setColor(char c) {
+	  if (c == 'r') {
+		  return "\u001B[31m";
+	  }
+	  else if (c == 'g') {
+		  return "\u001B[32m";
+	  }
+	  else if (c == 'b') {
+		  return "\u001B[34m";
+	  }
+	  else if (c == 'c') {
+		  return "\u001B[36m";
+	  }
+	  else if (c == 'y') {
+		  return "\u001B[33m";
+	  }
+	  else if (c == 'p') {
+		  return "\u001B[35m";
+	  }
+	  else if (c == 'w') {
+		  return "\u001B[37m";
+	  }
+	  else {
+		  return "\u001B[0m";
+	  }
+  }
 
   //Displays the list "pulledNums" from a player board
   String displayList(ArrayList<Integer> list) {
     String printed = "[";
     for (int i = 0; i < list.size(); i++) {
       if (i + 1 == list.size()) {
-        printed += "\u001B[32m" + list.get(i) + "\u001B[0m";
+        printed += setColor('g') + list.get(i) + setColor('-');
       }
       else {
-        printed += "\u001B[32m" + list.get(i) + "\u001B[0m,";
+        printed += setColor('g') + list.get(i) + setColor('-') + ",";
       }
     }
     printed += "]";
@@ -107,7 +135,7 @@ class IOF {
 
   //Displays a player board
   String displayBoard(int[][] board, ArrayList<Integer> list) {
-    String printed = "Pulled Value: " + displayList(list) + "\n\n\n\u001B[36m--------------------------";
+    String printed = "Pulled Value: " + displayList(list) + "\n\n\n" + setColor('b') + "--------------------------";
 
 
     for (int o = 0; o < 5; o++) {
@@ -116,16 +144,16 @@ class IOF {
         String num = String.format("%02d", board[o][i]);
         
         if (board[o][i] == 00) {
-          printed += "\u001B[33m" + num + "\u001B[36m | \u001B[0m";
+          printed += setColor('y') + num + setColor('b') +  " | " + setColor('-');
         }
         else {
-          printed += num + "\u001B[36m | \u001B[0m";
+          printed += num + setColor('b') + " | " + setColor('-');
         }
       }
-      printed += "\n\u001B[36m--------------------------";
+      printed += "\n" + setColor('b') + "--------------------------";
     }
 
-    printed += "\n\u001B[0m";
+    printed += "\n" + setColor('-');
     return printed;
   }
   
