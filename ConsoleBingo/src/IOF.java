@@ -8,6 +8,9 @@ class IOF {
 
   //Constructor prompts the usr and searches for them
   IOF(Player usr) {
+	enableAnsi();
+	System.out.println("\033[H\033[2J");
+    System.out.println("Welcome to Console Bingo!\n");
     System.out.println("Please enter your name.\n");
     String usrInput = input.nextLine();
 
@@ -89,6 +92,20 @@ class IOF {
     }
     
   }
+  
+  //Enables ANSI codes on Windows CMD
+  static void enableAnsi() {
+	    try {
+	        String os = System.getProperty("os.name").toLowerCase();
+	        if (os.contains("win")) {
+	            ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", "reg", "add", "HKCU\\Console", "/v", "VirtualTerminalLevel", "/t", "REG_DWORD", "/d", "1", "/f");
+	            builder.inheritIO().start().waitFor();
+	        }
+	    } catch (Exception e) {
+	        System.out.println("ERROR!\n" + e);
+	    }
+	}
+
   
   //Sets text color
   static String setColor(char c) {

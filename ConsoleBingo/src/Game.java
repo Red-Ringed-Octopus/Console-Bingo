@@ -23,8 +23,6 @@ class Game {
   Game() {
     //Populates dataset and prompts user with a sign-in
     popList();
-    System.out.println("\033[H\033[2J");
-    System.out.println("Welcome to Console Bingo!\n");
     manager = new IOF(usr);
 
     //First player prompt loop discussing main options
