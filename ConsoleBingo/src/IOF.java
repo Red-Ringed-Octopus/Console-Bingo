@@ -9,7 +9,7 @@ class IOF {
   //Constructor prompts the usr and searches for them
   IOF(Player usr) {
 	enableAnsi();
-	clearConsole();
+	System.out.println(clearConsole());
     System.out.println("Welcome to Console Bingo!\n");
     System.out.println("Please enter your name.\n");
     String usrInput = input.nextLine();
@@ -33,7 +33,7 @@ class IOF {
   //Turns every line inside of stats.txt into a string on an arraylist
   private List<String> getLines() {
     try {
-      return Files.readAllLines(Paths.get("data/stats.txt"));
+      return Files.readAllLines(Paths.get("ConsoleBingo/data/stats.txt"));
     }catch (IOException ex) {
       System.out.println("ERROR!\n" + ex);
       return null;
@@ -43,7 +43,7 @@ class IOF {
   //Writes all strings in the arraylist into the stats.txt file
   private void writeLines() {
     try {
-     Files.write(Paths.get("data/stats.txt"), lines);
+     Files.write(Paths.get("ConsoleBingo/data/stats.txt"), lines);
     }catch(Exception ex) {
       System.out.println("ERROR!\n" + ex);
       return;
@@ -161,7 +161,7 @@ class IOF {
 
 
     for (int o = 0; o < 5; o++) {
-      printed += "\n| \u001B[0m";
+      printed += "\n| " + setColor('-');
       for (int i = 0; i < 5; i++) {
         String num = String.format("%02d", board[o][i]);
         

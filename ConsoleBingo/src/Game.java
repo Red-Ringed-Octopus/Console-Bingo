@@ -27,7 +27,7 @@ class Game {
 
     //First player prompt loop discussing main options
     while (true) {
-      IOF.clearConsole();
+      System.out.println(IOF.clearConsole());
       System.out.println("Hello " + usr.getName() + ". What would you like to do?");
       System.out.println("1.Play\n2.Check Stats\n3.Save Stats\n4.Change User\n5.Quit");
       String usrInput = input.nextLine();
@@ -44,31 +44,31 @@ class Game {
           usrInput = input.nextLine();
         }
         else if (usrInput.equals("3") || usrInput.equals("Save Stats") || usrInput.equals("save stats")) {
-          IOF.clearConsole();
+          System.out.println(IOF.clearConsole());
           System.out.println("Saving...");
           manager.editStats(usr);
           System.out.println("Done!");
           IOF.delay(2000);
         }
         else if (usrInput.equals("4") || usrInput.equals("Change User") || usrInput.equals("change user")) {
-          IOF.clearConsole();
+          System.out.println(IOF.clearConsole());
           System.out.println("Please enter name.\n");
           usrInput = input.nextLine();
           manager.retrieveStats(usrInput, usr);
         }
         else if (usrInput.equals("5") || usrInput.equals("Quit") || usrInput.equals("quit")) {
-          IOF.clearConsole();
+          System.out.println(IOF.clearConsole());
           System.out.println("Goodbye!");
           IOF.delay(2000);
           break;
         }
         else {
-          IOF.clearConsole();
+          System.out.println(IOF.clearConsole());
           System.out.println("Not an option! Please input one of the three options on screen.");
           IOF.delay(2000);
         }
       } catch(Exception e) {
-    	  IOF.clearConsole();
+    	  System.out.println(IOF.clearConsole());
     	  System.out.println("Invalid input! Please try again.");
     	  System.out.println("\n\n\n\n" + e);
     	  IOF.delay(2000);
@@ -80,7 +80,7 @@ class Game {
   boolean selectGame() {
     while (true) {
       try {  
-    	IOF.clearConsole();
+    	System.out.println(IOF.clearConsole());
         System.out.println("What type of bingo would you like to play?");
         System.out.println("1.Classic\n2.Diagonals Only\n3.Straights\n4.Blackout\n5.Go Back\n");
         String usrInput = input.nextLine();
@@ -119,7 +119,7 @@ class Game {
    
     while (true) {  
       try {
-    	IOF.clearConsole();
+    	System.out.println(IOF.clearConsole());
         System.out.println("How many computer players would you like to go against?");
         System.out.println("1 2 3 4 5");
         String usrInput = input.nextLine();
@@ -175,7 +175,7 @@ class Game {
       usr.addPull(val);
 
       //Every player makes a move and then num is incremented as the loop continues
-      IOF.clearConsole();
+      System.out.println(IOF.clearConsole());
       System.out.println(manager.displayBoard(usr.getBoard(), usr.getList()));
       if (usr.makeMove() == false) {
         return;
@@ -201,13 +201,13 @@ class Game {
     if (checkWin() == 1) {
       usr.setGames(usr.getGames() + 1);
       usr.setWins(usr.getWins() + 1);
-      IOF.clearConsole();
+      System.out.println(IOF.clearConsole());
       System.out.println("Congratulations! You got a Bingo!");
       IOF.delay(3500);
     }
     else {
       usr.setGames(usr.getGames() + 1);
-      IOF.clearConsole();;
+      System.out.println(IOF.clearConsole());
       System.out.println("Awwww... You didn't get a Bingo before someone else. Better luck next time!");
       IOF.delay(3500);
     }
