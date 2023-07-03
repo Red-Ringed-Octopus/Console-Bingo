@@ -15,6 +15,7 @@ If there are no options, then you can type freely (an example being a name) and 
 ### Note*
 You will need to install a Java Development Kit of at least version 19 or higher since that was what version it was developed on. 
 The download to the latest JDK will be in this <a href="https://www.oracle.com/java/technologies/downloads/#java8"> link</a>.
+If the program still doesn't work, check your environment variables to see if "Path" has the location of the JDK and add it if it doesn't.
 
 ## How it Works
 Console Bingo uses primarily four java files and a text file for storage. These files consist of:<br>
