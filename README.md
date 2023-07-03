@@ -34,12 +34,13 @@ On top of that, IOF contains some other utility methods to change font color and
 * <b>Stats -></b> Stats is a text file that will contain all players that choose to save their stats before or after a game.
 
 ## Known Issues
-Some issues I've noticed are more inconviences than absolute flaws. A few of them include:
+Some issues I've noticed while either developing or finalizing were:
 
 * The executable must stay inside of the Console-Bingo folder
-* You cannot back out of a game once it has started, you must close out in order to exit.
+* You cannot back out of a game once it has started, you must close out in order to exit
 * Coordinates are a little vague in terms of how X and Y or situatied
 * Only the game screen is colored, all other menus are plain white
+* The program so far only works on Windows machines
 
 If you see any issues I did not list, you can create a new issue on the GitHub page or contact me at danzerrro@gmail.com.
 

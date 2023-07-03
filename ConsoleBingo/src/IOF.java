@@ -9,7 +9,7 @@ class IOF {
   //Constructor prompts the usr and searches for them
   IOF(Player usr) {
 	enableAnsi();
-	System.out.println("\033[H\033[2J");
+	clearConsole();
     System.out.println("Welcome to Console Bingo!\n");
     System.out.println("Please enter your name.\n");
     String usrInput = input.nextLine();
@@ -105,6 +105,11 @@ class IOF {
 	        System.out.println("ERROR!\n" + e);
 	    }
 	}
+  
+  //Clears console
+  static String clearConsole() {
+	  return "\033[H\033[2J";
+  }
 
   
   //Sets text color

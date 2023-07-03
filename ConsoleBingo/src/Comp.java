@@ -103,35 +103,35 @@ class Player extends Comp {
   boolean makeMove() {
     System.out.println("Do you see a matching value on your board?\nIf so, type in the coordinate or press ENTER to continue.");
     System.out.println("Or if you want to exit to menu, enter \"EXIT\".\n");
-    System.out.println("Format: \u001B[31mX\u001B[0m (space) \u001B[31mY\n");
+    System.out.println("Format: " + IOF.setColor('r') + "X" + IOF.setColor('-') + " (space) " + IOF.setColor('r') + "Y\n");
     while (true) {
-      System.out.println("\u001B[35m");
+      System.out.println(IOF.setColor('p'));
       String usrInput = input.nextLine();
 
       if (usrInput.isBlank()) {
-        System.out.println("\u001B[0m");
+        System.out.println(IOF.setColor('-'));
         break; 
       }
 
       try {
         if (checkBoard(Character.getNumericValue(usrInput.charAt(0)), Character.getNumericValue(usrInput.charAt(2)))) {
-          System.out.println("\u001B[0m");
+          System.out.println(IOF.setColor('-'));
           break;
         }
         else if (usrInput.equals("exit") || usrInput.equals("EXIT") || usrInput.equals("Exit")) {
           break;
         }
         else {
-          System.out.println("\u001B[0mIt appears you put in the wrong coordinates. Please try again or press ENTER to continue.");
+          System.out.println(IOF.setColor('-') + "It appears you put in the wrong coordinates. Please try again or press ENTER to continue.");
           IOF.delay(3500);
         }
       } catch (Exception ex) {
         if (usrInput.equals("exit") || usrInput.equals("EXIT") || usrInput.equals("Exit")) {
-          System.out.println("\u001B[0m");
+          System.out.println(IOF.setColor('-'));
           return false;
         }
         else {
-          System.out.println("\u001B[0mYou didn't format the coordinates correctly, or there was a non-compatable value inserted. Please try again or press ENTER to continue.");
+          System.out.println(IOF.setColor('-') + "You didn't format the coordinates correctly, or there was a non-compatable value inserted. Please try again or press ENTER to continue.");
           IOF.delay(3500);
         }
         
