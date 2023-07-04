@@ -39,7 +39,7 @@ class Game {
           }
         }
         else if (usrInput.equals("2") || usrInput.equals("Check Stats") || usrInput.equals("check stats")) {
-          IOF.clearConsole();
+          System.out.println(IOF.clearConsole());
           System.out.println("Games: " + usr.getGames() + "\nWins: " + usr.getWins());
           usrInput = input.nextLine();
         }

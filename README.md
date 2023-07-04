@@ -3,14 +3,15 @@
 
 Console Bingo is as the name says, a bingo game within the environment of a console. 
 The game uses a simple colored display and basic graphics to provide visual engagement to the user.
-Console Bingo also has a very simplistic user statistical system that utilizes a text file to write new users and retrieve old users and their stats.
+Console Bingo also has a very simplistic user statistical system that utilizes a text file to write new users and retrieve old users and their stats.<br>
+![Menu Screen](Images/mainmenu.jpg)
 
 ## How to Install and Play
 To download, simply click on the blue button labeled "<> Code" and downlaod as ZIP. 
-Once downloaded, extract the ZIP file and open the application "CBE" and the game will be ready to play.<br>
-
+Once downloaded, extract the ZIP file and open the application "CBE" and the game will be ready to play.
 Once open, every option can be typed in as lower case, the exact same as seen on console or by the corresponding number to the left.
-If there are no options, then you can type freely (an example being a name) and press ENTER when finished.
+If there are no options, then you can type freely (an example being a name) and press ENTER when finished.<br>
+![Game Board](Images/gamescreen.jpg)
 
 ### Note*
 You will need to install a Java Development Kit of at least version 19 or higher since that was what version it was developed on. 
@@ -32,16 +33,15 @@ These stats can be saved in the Stats text file if the user selects the option i
 IOF also checks the user at the start of the program to see if they exist inside the Stats file and will allocate another section of the file for new users.
 On top of that, IOF contains some other utility methods to change font color and set delays.
 
-* <b>Stats -></b> Stats is a text file that will contain all players that choose to save their stats before or after a game.
+* <b>Stats -></b> Stats is a text file that will contain all player statistics if the user chooses to save stats.<br>
+![Saves](Images/saves.jpg)
 
 ## Known Issues
 Some issues I've noticed while either developing or finalizing were:
 
 * The executable must stay inside of the Console-Bingo folder
-* You cannot back out of a game once it has started, you must close out in order to exit
 * Coordinates are a little vague in terms of how X and Y or situatied
-* Only the game screen is colored, all other menus are plain white
-* The program so far only works on Windows machines
+* The program does not work properly in Linux systems
 
 If you see any issues I did not list, you can create a new issue on the GitHub page or contact me at danzerrro@gmail.com.
 
